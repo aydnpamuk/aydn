@@ -4,10 +4,28 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aydn"
-version = "0.1.0"
-description = "Codex Python starter project"
+version = "1.0.0"
+description = "Amazon Private Label Product Analyzer - Data-driven analysis tool"
 authors = [{ name = "AYDIN" }]
-dependencies = []
+dependencies = [
+    "requests>=2.31.0",
+    "pydantic>=2.5.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.7",
+    "rich>=13.7.0",
+    "pandas>=2.1.0",
+]
+
+[project.scripts]
+aydn = "src.app:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.1.0",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+testpaths = ["tests"]
