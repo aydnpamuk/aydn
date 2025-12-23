@@ -3,11 +3,19 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aydn"
-version = "0.1.0"
-description = "Codex Python starter project"
+name = "amazon-ppc-system"
+version = "1.0.0"
+description = "Professional Amazon PPC & SEO Management System"
 authors = [{ name = "AYDIN" }]
-dependencies = []
+dependencies = [
+    "typer[all]>=0.9.0",
+    "pydantic>=2.5.0",
+    "pandas>=2.1.0",
+    "numpy>=1.26.0",
+    "rich>=13.7.0",
+    "python-dateutil>=2.8.2"
+]
+requires-python = ">=3.11"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
