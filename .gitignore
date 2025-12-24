@@ -1,10 +1,25 @@
-# Python  
-__pycache__/  
-*.py[cod]  
-*.egg-info/  
-dist/  
-build/  
-.venv/  
-  
-# VS Code  
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+
+# VS Code
 .vscode/
+
+# Environment
+.env
+
+# Data
+data/
+*.db
+*.sqlite
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
