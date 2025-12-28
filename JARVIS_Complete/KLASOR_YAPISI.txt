@@ -1,0 +1,116 @@
+📁 JARVIS Klasör Yapısı
+═══════════════════════════════════════════════════════════
+
+JARVIS_Complete/
+│
+├── 📄 HIZLI_BASLANGIC.txt       ← ⭐ Buradan başlayın!
+├── 📄 KLASOR_YAPISI.txt          ← Bu dosya
+├── 📄 README.md                  ← Detaylı dokümantasyon
+│
+├── 🔧 setup.sh                   ← Otomatik kurulum scripti
+├── 🚀 run.sh                     ← Hızlı başlatma scripti
+│
+├── ⚙️ .env.example               ← API key şablonu
+├── 📝 .gitignore                 ← Git ignore kuralları
+├── 📝 pyproject.toml             ← Python proje yapılandırması
+├── 📝 Makefile                   ← Make komutları (fmt, lint, test)
+├── 📝 .ruff.toml                 ← Linter ayarları
+│
+├── 📦 requirements.txt           ← Ana bağımlılıklar
+├── 📦 requirements-dev.txt       ← Geliştirme bağımlılıkları
+│
+├── 🐍 jarvis_cli.py              ← CLI giriş noktası
+│
+├── 📂 jarvis/                    ← Ana JARVIS modülü
+│   ├── __init__.py               
+│   ├── models.py                 ← Veri modelleri (Pydantic)
+│   ├── config.py                 ← Konfigürasyon yöneticisi
+│   ├── prompt_library.py         ← Prompt CRUD işlemleri
+│   ├── screen_capture.py         ← Ekran yakalama modülü
+│   ├── voice.py                  ← TTS/STT ses arayüzü
+│   ├── ai_engine.py              ← AI entegrasyonu (Claude/OpenAI)
+│   └── jarvis.py                 ← Ana orchestrator sınıfı
+│
+├── 📂 tests/                     ← Test dosyaları
+│   ├── test_models.py
+│   ├── test_config.py
+│   ├── test_prompt_library.py
+│   └── test_app.py
+│
+└── 📂 examples/                  ← Örnek dosyalar
+    └── prompts/                  ← Örnek uzman prompt'ları
+        ├── amazon_ppc_expert.txt       ← Amazon PPC Uzmanı
+        ├── python_code_reviewer.txt    ← Python Kod İnceleyici
+        └── general_assistant.txt       ← Genel Asistan
+
+
+═══════════════════════════════════════════════════════════
+
+📋 DOSYA AÇIKLAMALARI
+═══════════════════════════════════════════════════════════
+
+🔧 ANA DOSYALAR
+───────────────
+jarvis_cli.py           → CLI komutları (chat, voice, prompt)
+setup.sh                → Otomatik kurulum
+run.sh                  → Hızlı başlatma
+
+
+🐍 JARVIS MODÜLLERI
+───────────────────
+models.py               → ExpertPrompt, PromptLibrary, JarvisConfig
+config.py               → .env yükleme, API key yönetimi
+prompt_library.py       → Prompt CRUD, JSON persistence
+screen_capture.py       → MSS ekran yakalama, base64 encoding
+voice.py                → gTTS (TTS), SpeechRecognition (STT)
+ai_engine.py            → Claude/OpenAI API entegrasyonu
+jarvis.py               → Ana uygulama sınıfı
+
+
+🧪 TEST DOSYALARI
+─────────────────
+test_models.py          → Model testleri
+test_config.py          → Config testleri
+test_prompt_library.py  → Prompt yönetimi testleri
+
+
+📚 ÖRNEK DOSYALAR
+─────────────────
+amazon_ppc_expert.txt   → Amazon reklamları için uzman
+python_code_reviewer.txt→ Python kod inceleme uzmanı
+general_assistant.txt   → Genel amaçlı asistan
+
+
+═══════════════════════════════════════════════════════════
+
+🚀 KURULUM VE KULLANIM
+═══════════════════════════════════════════════════════════
+
+1. Kurulum:
+   bash setup.sh
+
+2. .env dosyası:
+   cp .env.example .env
+   nano .env  # API key ekle
+
+3. Çalıştırma:
+   source .venv/bin/activate
+   python jarvis_cli.py chat
+
+   veya hızlı:
+   bash run.sh
+
+
+═══════════════════════════════════════════════════════════
+
+📊 İSTATİSTİKLER
+═══════════════════════════════════════════════════════════
+
+• Python Dosyaları: 13
+• Test Dosyaları: 4
+• Örnek Prompt'lar: 3
+• Toplam Kod Satırı: ~2900
+• Modül Sayısı: 8
+
+
+═══════════════════════════════════════════════════════════

@@ -1,0 +1,194 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║          🤖 JARVIS - HIZLI BAŞLANGIÇ KILAVUZU            ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+📋 İÇİNDEKİLER
+═══════════════════════════════════════════════════════════
+1. Hızlı Kurulum (5 Dakika)
+2. API Key Alma
+3. İlk Kullanım
+4. Örnek Komutlar
+5. Sorun Giderme
+
+
+1️⃣ HIZLI KURULUM
+═══════════════════════════════════════════════════════════
+
+Adım 1: Bu klasöre gidin
+─────────────────────────────
+cd /home/user/JARVIS_Complete
+
+
+Adım 2: Kurulum scriptini çalıştırın
+─────────────────────────────────────
+bash setup.sh
+
+Bu script otomatik olarak:
+✓ Virtual environment oluşturur
+✓ Bağımlılıkları yükler
+✓ .env dosyası oluşturur
+✓ Testleri çalıştırır
+
+
+Adım 3: API Key ekleyin
+─────────────────────────
+nano .env
+
+Şunu ekleyin:
+ANTHROPIC_API_KEY=sk-ant-YOUR-KEY-HERE
+
+
+Adım 4: Çalıştırın!
+─────────────────────
+source .venv/bin/activate
+python jarvis_cli.py chat
+
+
+2️⃣ API KEY ALMA
+═══════════════════════════════════════════════════════════
+
+SEÇeNEK A: Anthropic Claude (ÖNERİLEN)
+─────────────────────────────────────────
+1. https://console.anthropic.com/ → Sign Up
+2. API Keys → Create Key
+3. sk-ant-... ile başlayan key'i kopyala
+4. .env dosyasına yapıştır:
+   ANTHROPIC_API_KEY=sk-ant-xxxxx
+
+
+SEÇENEK B: OpenAI GPT
+──────────────────────
+1. https://platform.openai.com/ → Sign Up
+2. API Keys → Create new secret key
+3. sk-... ile başlayan key'i kopyala
+4. .env dosyasına yapıştır:
+   OPENAI_API_KEY=sk-xxxxx
+   JARVIS_AI_PROVIDER=openai
+
+
+3️⃣ İLK KULLANIM
+═══════════════════════════════════════════════════════════
+
+Virtual Environment Aktif Et
+────────────────────────────
+cd /home/user/JARVIS_Complete
+source .venv/bin/activate
+
+
+İnteraktif Sohbet Modu
+──────────────────────
+python jarvis_cli.py chat
+
+veya (eğer pip install -e . yaptıysanız):
+jarvis chat
+
+
+Sesli Mod
+─────────
+python jarvis_cli.py voice
+
+
+Tek Mesaj Gönder
+────────────────
+python jarvis_cli.py chat -m "Merhaba JARVIS"
+
+
+Ekran ile Sor
+─────────────
+python jarvis_cli.py chat -m "Bu ekrandaki veriyi analiz et" -s
+
+
+4️⃣ ÖRNEK KOMUTLAR
+═══════════════════════════════════════════════════════════
+
+Prompt Ekle
+───────────
+jarvis prompt add "Amazon Uzmanı" \
+  --file examples/prompts/amazon_ppc_expert.txt \
+  --tags "amazon,ppc"
+
+
+Prompt Listele
+──────────────
+jarvis prompt list
+
+
+Prompt Aktif Et
+────────────────
+jarvis prompt activate "Amazon Uzmanı"
+
+
+Sohbet Başlat
+─────────────
+jarvis chat
+
+> Ben: Ekrandaki kampanya performansını değerlendir
+> JARVIS: Ekran görüntüsü almak için "ekran" yazın
+> Ben: ekran
+> JARVIS: [Ekranı analiz eder...]
+
+
+5️⃣ SORUN GİDERME
+═══════════════════════════════════════════════════════════
+
+❌ "ModuleNotFoundError: No module named 'jarvis'"
+────────────────────────────────────────────────────
+✓ Virtual environment aktif mi?
+  → source .venv/bin/activate
+
+✓ Bağımlılıklar yüklü mü?
+  → pip install -r requirements.txt
+
+
+❌ "ANTHROPIC_API_KEY bulunamadı"
+────────────────────────────────
+✓ .env dosyası var mı?
+  → ls -la .env
+
+✓ API key doğru mu?
+  → cat .env | grep ANTHROPIC
+
+
+❌ Ses çalışmıyor
+─────────────────
+✓ Linux için:
+  → sudo apt-get install mpg123 ffmpeg
+
+✓ Mikrofon izni var mı?
+  → Sistem ayarlarından kontrol et
+
+
+❌ Ekran yakalama çalışmıyor
+────────────────────────────
+✓ Linux için:
+  → X11 veya Wayland desteği gerekli
+
+✓ macOS için:
+  → Ekran kaydı izni verin
+
+
+═══════════════════════════════════════════════════════════
+
+📚 DAHA FAZLA BİLGİ
+═══════════════════════════════════════════════════════════
+
+• README.md dosyasını okuyun
+• examples/prompts/ klasöründe örnek prompt'lar var
+• Testler: pytest
+• Dokümantasyon: jarvis --help
+
+
+═══════════════════════════════════════════════════════════
+
+🎯 HIZLI BAŞLANGIÇ ÖZETİ
+═══════════════════════════════════════════════════════════
+
+bash setup.sh
+nano .env                          # API key ekle
+source .venv/bin/activate
+python jarvis_cli.py chat
+
+
+🎉 İYİ KULANIMLAR!
