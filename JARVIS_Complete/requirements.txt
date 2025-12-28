@@ -1,0 +1,23 @@
+# Project dependencies
+
+# AI & Vision
+anthropic>=0.40.0
+openai>=1.50.0
+pillow>=10.0.0
+
+# Screen Capture
+pyautogui>=0.9.54
+mss>=9.0.0
+
+# Voice Interface
+gTTS>=2.5.0
+SpeechRecognition>=3.10.0
+pydub>=0.25.1
+
+# Data & Validation
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.0.0

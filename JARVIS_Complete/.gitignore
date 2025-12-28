@@ -1,0 +1,16 @@
+# Python  
+__pycache__/  
+*.py[cod]  
+*.egg-info/  
+dist/  
+build/  
+.venv/  
+  
+# VS Code
+.vscode/
+
+# JARVIS
+.env
+data/
+*.mp3
+*.wav
