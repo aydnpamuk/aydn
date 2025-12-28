@@ -6,5 +6,11 @@ dist/
 build/  
 .venv/  
   
-# VS Code  
+# VS Code
 .vscode/
+
+# JARVIS
+.env
+data/
+*.mp3
+*.wav
