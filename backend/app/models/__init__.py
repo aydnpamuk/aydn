@@ -1,5 +1,5 @@
 """Database models"""
 from .review import Review, Product
-from .job import ScrapeJob
+from .job import ScrapeJob, JobStatus
 
-__all__ = ["Review", "Product", "ScrapeJob"]
+__all__ = ["Review", "Product", "ScrapeJob", "JobStatus"]
