@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYDN - Amazon Review Analyzer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="popup-header">
+      <h1>📊 AYDN</h1>
+      <p class="subtitle">Amazon Review Analyzer</p>
+    </div>
+
+    <!-- Status Section -->
+    <div class="status-section">
+      <div class="status-card" id="status-card">
+        <div class="status-icon">🔍</div>
+        <div class="status-text">
+          <p id="status-message">Navigate to Amazon review page</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last Collection Info -->
+    <div class="info-section" id="last-collection" style="display: none;">
+      <h3>Last Collection</h3>
+      <div class="info-card">
+        <p><strong>ASIN:</strong> <span id="last-asin">-</span></p>
+        <p><strong>Reviews:</strong> <span id="last-count">-</span></p>
+        <p><strong>Time:</strong> <span id="last-time">-</span></p>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-section">
+      <h3>⚙️ Settings</h3>
+
+      <div class="setting-item">
+        <label for="backend-url">Backend URL</label>
+        <input
+          type="text"
+          id="backend-url"
+          placeholder="http://localhost:8000"
+          value="http://localhost:8000"
+        >
+      </div>
+
+      <button id="save-settings" class="btn btn-primary">
+        💾 Save Settings
+      </button>
+
+      <div id="save-message" class="message" style="display: none;"></div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="actions-section">
+      <h3>🚀 Quick Actions</h3>
+
+      <button id="open-dashboard" class="btn btn-secondary">
+        📊 Open Dashboard
+      </button>
+
+      <button id="open-docs" class="btn btn-secondary">
+        📚 View Documentation
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <p>v1.0.0 | <a href="#" id="view-on-github">GitHub</a></p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
