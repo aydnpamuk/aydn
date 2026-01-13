@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYDN Dashboard - Review Analytics</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="header-content">
+        <h1>📊 AYDN Dashboard</h1>
+        <p class="subtitle">Amazon Review Analytics - Local Storage</p>
+      </div>
+      <div class="header-actions">
+        <button id="export-btn" class="btn btn-secondary">📤 Export Data</button>
+        <button id="import-btn" class="btn btn-secondary">📥 Import Data</button>
+        <button id="clear-btn" class="btn btn-danger">🗑️ Clear All</button>
+      </div>
+    </header>
+
+    <!-- Product Selector -->
+    <div class="product-selector">
+      <label for="product-select">Select Product:</label>
+      <select id="product-select" class="product-dropdown">
+        <option value="">Loading products...</option>
+      </select>
+      <button id="refresh-btn" class="btn btn-icon">🔄</button>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading-state" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading dashboard...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <div class="empty-icon">📦</div>
+      <h2>No Reviews Yet</h2>
+      <p>Visit an Amazon product review page and use the AYDN extension to collect reviews!</p>
+      <button id="learn-more-btn" class="btn btn-primary">Learn How</button>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div id="dashboard-content" style="display: none;">
+      <!-- Product Info Card -->
+      <div class="product-card">
+        <h2 id="product-title">Loading...</h2>
+        <div class="product-meta">
+          <span><strong>ASIN:</strong> <span id="product-asin">-</span></span>
+          <span><strong>Marketplace:</strong> <span id="product-marketplace">-</span></span>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <div class="stat-content">
+            <h3 id="stat-total">0</h3>
+            <p>Total Reviews</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-content">
+            <h3 id="stat-rating">0.0</h3>
+            <p>Average Rating</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-content">
+            <h3 id="stat-verified">0%</h3>
+            <p>Verified Purchase</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">😞</div>
+          <div class="stat-content">
+            <h3 id="stat-negative">0</h3>
+            <p>Negative Reviews</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-row">
+        <div class="chart-card">
+          <h3>Rating Distribution</h3>
+          <canvas id="rating-chart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Sentiment Distribution</h3>
+          <canvas id="sentiment-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Reviews Table -->
+      <div class="reviews-section">
+        <div class="reviews-header">
+          <h3>Reviews</h3>
+          <div class="reviews-controls">
+            <select id="filter-select" class="filter-dropdown">
+              <option value="all">All Reviews</option>
+              <option value="negative">Negative (≤4★)</option>
+              <option value="positive">Positive (≥4★)</option>
+            </select>
+            <button id="export-reviews-btn" class="btn btn-sm">📄 Export CSV</button>
+          </div>
+        </div>
+
+        <div id="reviews-list" class="reviews-list">
+          <!-- Reviews will be inserted here -->
+        </div>
+
+        <div class="pagination" id="pagination">
+          <!-- Pagination controls -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden file input for import -->
+  <input type="file" id="import-file" accept=".json" style="display: none;">
+
+  <!-- Scripts -->
+  <script src="../lib/storage.js"></script>
+  <script src="../lib/sentiment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYDN - Standalone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      text-align: center;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .info-box p {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: white;
+      color: #667eea;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    .stats {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .stats p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 AYDN</h1>
+  <p class="subtitle">Amazon Review Analyzer<br>Standalone - No Backend</p>
+
+  <div class="info-box">
+    <strong>✅ 100% Local Storage</strong>
+    <p>All reviews are stored in your browser. No server needed!</p>
+  </div>
+
+  <button id="dashboard-btn" class="btn btn-primary">
+    📊 Open Dashboard
+  </button>
+
+  <button id="export-btn" class="btn btn-secondary">
+    📤 Export Data
+  </button>
+
+  <div class="stats" id="stats">
+    <strong>Quick Stats:</strong>
+    <p id="stats-content">Loading...</p>
+  </div>
+
+  <script src="popup-standalone.js"></script>
+</body>
+</html>
