@@ -1,0 +1,13 @@
+# AYDN Chrome Extension Icons
+
+Bu klasörde extension icon'ları bulunmalı:
+- icon16.png (16x16)
+- icon48.png (48x48)
+- icon128.png (128x128)
+
+Icon oluşturmak için:
+1. Logo/tasarım hazırlayın
+2. 3 farklı boyutta export edin
+3. Bu klasöre kopyalayın
+
+Geçici olarak manifest.json'da icon path'lerini comment out edebilirsiniz.

@@ -1,0 +1,296 @@
+/**
+ * AYDN Chrome Extension Styles
+ */
+
+/* Floating Action Button */
+.aydn-fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  transition: all 0.3s ease;
+}
+
+.aydn-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.aydn-fab-icon {
+  font-size: 28px;
+}
+
+.aydn-fab-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.aydn-fab:hover .aydn-fab-tooltip {
+  opacity: 1;
+}
+
+/* Modal */
+.aydn-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000000;
+  animation: aydn-fade-in 0.3s ease;
+}
+
+@keyframes aydn-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.aydn-modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: aydn-slide-up 0.3s ease;
+}
+
+@keyframes aydn-slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.aydn-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.aydn-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.aydn-modal-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.aydn-modal-close:hover {
+  color: #333;
+}
+
+.aydn-modal-body {
+  padding: 20px;
+}
+
+/* Product Info */
+.aydn-product-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.aydn-product-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.aydn-product-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Options */
+.aydn-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.aydn-options label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.aydn-options label span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.aydn-options select,
+.aydn-options input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+}
+
+.aydn-options select:focus,
+.aydn-options input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.aydn-note {
+  font-size: 12px;
+  color: #ff6b6b;
+  margin: 5px 0 0 0;
+}
+
+/* Actions */
+.aydn-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.aydn-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.aydn-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.aydn-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.aydn-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.aydn-btn-secondary {
+  background: #e9ecef;
+  color: #333;
+}
+
+.aydn-btn-secondary:hover {
+  background: #dee2e6;
+}
+
+/* Progress */
+.aydn-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.aydn-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+#aydn-progress-text {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0 0 0;
+}
+
+/* Success/Error */
+.aydn-success,
+.aydn-error {
+  text-align: center;
+  padding: 20px;
+}
+
+.aydn-success h3 {
+  color: #51cf66;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+}
+
+.aydn-error h3 {
+  color: #ff6b6b;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+}
+
+.aydn-success p,
+.aydn-error p {
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.aydn-success strong {
+  color: #667eea;
+  font-size: 20px;
+}
+
+/* Multi-options */
+#aydn-multi-options {
+  padding-left: 15px;
+  border-left: 3px solid #667eea;
+  margin-top: 10px;
+}
